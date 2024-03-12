@@ -7,7 +7,6 @@ CONFIG += c++17 cmdline
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        GenericClasses/commandline.cpp \
         exampleclass.cpp \
         main.cpp \
         mainapp.cpp
@@ -18,6 +17,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    GenericClasses/commandline.hpp \
     exampleclass.hpp \
     mainapp.hpp

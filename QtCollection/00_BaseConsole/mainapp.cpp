@@ -12,10 +12,9 @@ MainApp::~MainApp()
         example->deleteLater();
 }
 
-bool MainApp::init(int argc, char *argv[])
+bool MainApp::init(QStringList arguments)
 {
-    Q_UNUSED(argc)
-    Q_UNUSED(argv)
+    Q_UNUSED(arguments)
 
     if(example.isNull())
         example = new ExampleClass(this);

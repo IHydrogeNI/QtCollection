@@ -30,7 +30,7 @@ public:
      * @param argv
      * @return
      */
-    bool init(int argc, char *argv[]);
+    bool init(QStringList arguments);
 
 // PRIVATE FUNCTION BLOCK
 private:

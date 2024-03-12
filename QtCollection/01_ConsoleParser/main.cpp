@@ -4,11 +4,11 @@
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    QCoreApplication::setApplicationName("01_ConsoleParser");
-    QCoreApplication::setApplicationVersion("1.0.0");
+    a.setApplicationName("01_ConsoleParser");
+    a.setApplicationVersion("1.0.0");
 
     MainApp app;
-    if(app.init(argc,argv)){
+    if(app.init(a.arguments())){
         qDebug() << "MainApp init success";
     }
     else{

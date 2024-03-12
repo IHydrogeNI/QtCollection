@@ -2,8 +2,9 @@
 #define MAINAPP_HPP
 
 #include <QObject>
+#include <QCommandLineParser>
+#include <QList>
 #include <QPointer>
-#include "GenericClasses/commandline.hpp"
 #include "exampleclass.hpp"
 
 class MainApp : public QObject
@@ -27,21 +28,26 @@ public:
      * initializing application with sub classes
      * if everything is ok returns true and exec' app
      * else returns false to main will gives fatal error with EXIT_FAILURE
-     * @param argc
-     * @param argv
+     * @param arguments
      * @return
      */
-    bool init(int argc, char *argv[]);
+    bool init(QStringList arguments);
 
 // PRIVATE FUNCTION BLOCK
 private:
-
+    /**
+     * @brief parseCommandLineOptions
+     * checks program arguments and set in parameters for working modes
+     * @param arguments
+     */
+    void parseCommandLineOptions(QStringList arguments);
 // PUBLIC VARIABLE BLOCK
 public:
 
 // PRIVATE VARIABLE BLOCK
 private:
-    QPointer<ExampleClass> example;
+    quint8 exampleCountToCreate = 0;
+    QList<QPointer<ExampleClass>> exampleList;
 
 // PUBLIC SLOTS BLOCK
 public slots:
